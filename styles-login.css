@@ -1,0 +1,99 @@
+*{
+    background-color: black;
+    margin:0;
+    color: white;
+}
+
+.Login-div{
+    margin-top: 9rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-heading{
+    color: azure;
+    display: inline;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Google-div{
+    text-align: center;
+    margin: 0px;
+}
+.Google-sign-in{
+    color: white;
+    text-align: center;
+    transition-duration: 0.4s;
+    background-color: darkblue;
+    padding: 0.625rem 1.813rem 0.625rem 1.813rem;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 1rem;
+}
+
+.form-email{
+    margin-top: 2rem;
+    text-align: center;
+}
+.Google-sign-in:hover {
+    background-color: white; 
+    color: black;
+    border-style:double;
+  }
+
+
+/* .g-image{
+    width: 20px;
+    background-color: blue;
+    margin-top: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+} */
+
+.form-text-e{
+    display: inline;
+    padding-right: 8.125rem;
+  
+}
+.form-text-p{
+    display: inline;
+    padding-right: 5.038rem;
+}
+.border-login{
+    border-radius: 0.2rem;
+    border-style: solid;
+    font-style: italic;
+  
+}
+#flogin{
+    font-style: normal;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    padding: 0.313rem 0.625rem 0.313rem 0.625rem;
+    margin-left: 1.25rem;
+    border-radius: 0.5rem;
+    font-size: medium;
+}
+#flogin:hover {
+    background-color: darkblue;
+    color: white;
+    border-style:double;
+}
+
+.button:active {
+  background-color: darkblue;
+  box-shadow: 0 0.313rem white;
+  transform: translateY(0.25rem);
+}
+.new-user{
+    text-align: center;
+    font-family:'Josefin Sans', sans-serif; 
+    margin-left: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 7rem;
+}
+.register{
+    border-bottom-style: double;
+}
+

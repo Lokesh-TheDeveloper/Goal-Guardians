@@ -1,0 +1,96 @@
+*{
+    background-color: black;
+    margin:0;
+    color: white;
+} 
+.goal-body{
+    margin-top: 7rem;
+    margin-left: 8rem;
+}
+.goal-welcome{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+.select-goal{
+    /* display: inline; */
+    margin-top: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    color: wheat;   /* Discuss color later */
+    font-size: larger;
+}
+
+.column-goals {
+    float: left;
+    width: 18%;
+    padding: 0 0.3rem;
+    /* background-color: wheat; */
+    border:solid 0.25rem;
+    margin-left: 1rem;
+    border-radius: 0.65rem;
+    border-color: #a3479e;
+  }
+.column-goals:hover{
+    border-color :#65144e;
+    transition: border 0.2s ease-out;
+    opacity:0.75;
+} 
+  .row-goals
+{
+    
+    margin: 7.8rem;
+    margin-top: 3.5rem;
+    /* background-color: #ad3c8f; */
+    font-family: 'Poppins', sans-serif;
+}
+
+  /* Clear floats after the columns */
+  .row-goals:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  h3{
+    margin:0.5rem 0.05rem 0rem 0.05rem;
+    border-bottom-style: double;
+    border-bottom-color: whitesmoke;
+    border-bottom-width: 0.02rem;
+    font-size: 1rem;
+}
+.card-text{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1050px){
+
+  .column-goals{
+    margin-bottom: 2rem;
+    width: 30%; 
+  }
+  .row-goals
+  {
+      margin: 2rem;
+}}
+
+@media only screen and (max-width:800px){
+    .goal-body{
+        margin-top: 7rem;
+        margin-left: 3rem;
+    }
+    .goal-welcome{
+      text-align: left;
+    }
+    .select-goal{
+    text-align: left;
+    }
+    .column-goals{
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+    .row-goals 
+    {
+        margin: 2rem;
+}}

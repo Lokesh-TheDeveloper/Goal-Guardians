@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href="cdnjs.cloudflare.com/ajax/libs/emojione/1.3.0/assets/css/emojione.min.css">
+    <link rel="stylesheet" href="styles-calc.css">
+    <link rel="stylesheet" href="styles-navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">             
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+
+
+    <title>Savings Calculator</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><i class="ri-home-fill"></i><span>Logo</span></a>
+        <ul class="navbar">
+            <li><a href="Landing-Page.html" class="active">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="Goals.html">Your Goals</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="main">
+            <a href="Login.html" class="user"><i class="ri-user-fill"></i>Sign In</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+
+
+    </header>
+
+    <div class="container-fluid center-meh-boi">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-1">
+                <div class="box-of-stuff">
+                    <form>
+                        <input class="form-control input-lg" type="number" id="in_hand_amount" placeholder="Amount you can invest in present time ( in-hand lumpsum )" />
+                        <input class="form-control input-lg" type="number" id="total_money" placeholder="Total amount you need in present time." />
+                        <input class="form-control input-lg" type="number" id="years" placeholder="Number of years you need to achieve your goal." />
+                        <input class="form-control input-lg" type="number" id="returns_yearly" placeholder="Expected yearly returns in your savings" />
+                        <input class="form-control input-lg" type="number" id="increase_yearly" placeholder="Yearly increase in monthly savings " />
+                        <input class="form-control input-lg" type="number" id="loans" placeholder="% of total amount you are going to acquire through loans." />
+                    </form>
+                    <button class="btn btn-primary btn-lg btn-block" style="background-color: darkcyan;">Submit</button>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="results">
+                    <h1 class="title">Results</h1>
+                    <span class="emoji">
+                    </span>
+                    <div class="results-data " style="color: black;">
+                        <p class = "calci-para">Hit that submit button to see your results!</p>
+                    </div><br>
+                    <div class="rewards-box">
+                        <div class="rewards-title">Your Rewards</div><br>
+                        <div class="rewards-earned"><p class = "rewards-para">Calculate to unlock your rewards</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+              
+const in_hand_amount = document.getElementById("in_hand_amount");
+
+const total_money = document.getElementById("total_money");
+
+const years = document.getElementById("years");
+
+const returns_yearly = document.getElementById("returns_yearly");
+
+
+const increase_yearly = document.getElementById("increase_yearly");
+
+const loans = document.getElementById("loans");
+
+const button = document.getElementsByClassName("btn")[0];
+       
+        $(document).ready(centerme);
+        $(window).resize(centerme);
+        button.addEventListener( 'click' , gather)
+
+        function gather() {
+            // e.preventDefault();
+
+            
+                const lumpsum = parseFloat(in_hand_amount.value);
+                const saal = parseFloat(years.value);
+                const total_paisa = parseFloat(total_money.value);
+                const ry = parseFloat(returns_yearly.value);
+                const iy = parseFloat(increase_yearly.value);
+                const loan = parseFloat(loans.value);
+            const inflation = ( 1 + 5/100);
+            const total_mony = ((total_paisa))*(Math.pow(inflation,saal));
+            const x = (loan/100);
+            const total_moniy = total_mony - x*total_mony;
+            // alert(total_moniy);
+            // // const savings_increase_rate = (iy)+(ry);
+             let y = 1.00 + (ry)/100.00;
+            // alert(y);
+            // const t = Math.pow(y,saal);
+            // alert(t);
+            // const z = total_moniy/t;
+            // alert(z);
+            // const m = (z - lumpsum);
+            // alert(m);
+             const l = 1.00 + (iy)/100.00;
+            // alert(l);
+            // const k = Math.pow(l,saal);
+            // alert(k);
+            // const s = m/k;
+            // alert(s);
+            const s = y;
+            for(let i = 2;i<=saal;i++){
+                let a = Math.pow(s,i);
+             
+                y = y + a;
+            }
+            const h = total_moniy - 0.1*total_moniy; // Rewards wala
+            const k = l*y;
+            const b = Math.pow(s,saal);
+            const c = lumpsum*b;
+            const d = b+k;
+            const e = total_moniy-c;
+            const f = e/d;
+            const monthly_amount = (f/12).toFixed(0);
+            const o = h - c;
+            const w = o/d;
+            const new_monthly_amount = (w/12).toFixed(0);
+            const diff = monthly_amount - new_monthly_amount;
+            let z = 0;
+            if (total_moniy > 100000){
+               z = 5000;
+            }else z = (5/100)*total_moniy;
+            // const  xyz =  getElementByClassName("results-data").empty();
+            // $(".emoji").empty();
+   
+            if (monthly_amount === 0) {
+                $(".results-data").append('<p class="text-danger convert-emoji"> You didn\'t enter anything. Try again.</p>');
+               
+            }
+            else {
+              $(".calci-para").empty();
+              $(".rewards-title").empty();
+              $(".rewards-para").empty();
+               $(".results-data").append('<p class="text-success"> You need to save Rs ' + monthly_amount + ' per month to achieve your goal in ' + saal + ' years. This is taken in consideration with 5 % inflation rate. <br><br> Rewards to Unlock <br> <br> (1) We will cover ' + z + ' rupees as this is your first goal on our platform. <br> <br> (2) We have found just the right offer for you. You only need to save Rs ' + new_monthly_amount +' per month , hence additionally saving you Rs ' + diff + ' per month.</p>');
+            }
+
+          
+        }
+
+        function centerme() {
+            boiheight = $(".center-meh-boi").height();
+            middle = boiheight / 2;
+            $(".center-meh-boi").css("margin-top", "-" + middle + "px");
+            console.log(boiheight);
+        }
+
+
+    </script> 
+<!-- JS link  -->
+<script type="text/javascript" src="script-navbar.js"></script> 
+</body>
+
+</html>
